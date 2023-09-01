@@ -1,0 +1,21 @@
+# The name of a database user with read access to the database.
+DBUSER=xxxxxx
+# The password associated with the above user. Leave commented if none.
+DBPASS=xxxxx
+# The database associated with this repository.
+DBNAME=commitInfo.txt
+DBHOST=localhost
+# The path relative to the repository root in which to store the sql dump.
+DBPATH=suivi
+read -p "Sauvegarde de la base dans ce commit (y/[n]) ?" yn < /dev/tty
+yn=${yn:n}
+case $yn in
+[Yy]* )
+echo mysqldump -h $DBHOST -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME
+mysqldump -h $DBHOST -u $DBUSER -p$DBPASS $DBNAME > $DBPATH/$DBNAME $DBPATH/$DBNAME $DBPATH/$DBNAME> « commit vérifié le <date et heure du jour>»,
+git add $DBPATH/$DBNAME
+exit 0;;
+[Nn]* )
+exit 0;;
+esac
+exit 0
