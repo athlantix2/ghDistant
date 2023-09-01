@@ -1,0 +1,4 @@
+Constantes {
+constante HELLO_WORLD_TITLE = « Title sali-salut »
+constante HELLO_WORLD_TEXT = « hola »
+}
